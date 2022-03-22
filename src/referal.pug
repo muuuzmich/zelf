@@ -1,0 +1,38 @@
+doctype html
+meta(charset="utf-8")
+meta(property='og:site_name' content='Zelf')
+meta(property='og:type' content='website')
+meta(http-equiv="ScreenOrientation" content="autoRotate:disabled")
+meta(name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+link(href='./assets/css/referal.min.css' rel="stylesheet")
+link(rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png")
+link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
+link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+link(rel="manifest" href="/site.webmanifest")
+body
+    include components/ref_header
+    .pageAlign.referalPage#referalPage
+        .referalWindow(data-aos="fade-in" data-aos-duration="1000" data-aos-delay="500")
+            .gif-mobile
+                video(src="./assets/img/Card_rotate_final.mp4" autoplay muted loop playsinline)
+            .referalWindow__title Olya invites you to join Zelf and pre&#8209;order your
+                .zelfInline
+                    video(src="./assets/img/Card_rotate_final.mp4" autoplay muted loop playsinline)
+                |  card with €5 boost
+            .referalWindow__content
+                .qr
+                    p Scan the QR code to get started:
+                    .qr-code
+                        img(src='./assets/img/qr.jpg')
+                .messenger
+                    p.hide-mobile Or choose the messenger to start using the desktop app:
+                    p.show-mobile Choose the messenger you use the most to start:
+                    ul.messenger-list
+                        include components/bots_link
+        .referal__footer
+            p Zelf is super-fast banking️ in your messenger ⚡<span class="secondary">Send and receive money easily by text or voice.</span>
+            a.btn.btn--inverted(href="#") More about Zelf
+            .referal__footer__small First cards will be distributed ⏱ soon
+    script(src="./assets/js/aos.js")
+    script(src="./assets/js/ref.js")

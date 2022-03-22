@@ -1,0 +1,13 @@
+@import "connect";
+
+//Connect SpaceGrotesk
+//@include font-face('SpaceGrotesk', '../fonts/SpaceGrotesk/SpaceGrotesk-Light', 300);
+@include font-face('SpaceGrotesk', '../fonts/SpaceGrotesk/SpaceGrotesk-Regular', 400);
+@include font-face('SpaceGrotesk', '../fonts/SpaceGrotesk/SpaceGrotesk-Medium', 500);
+@include font-face('SpaceGrotesk', '../fonts/SpaceGrotesk/SpaceGrotesk-SemiBold', 600);
+//@include font-face('SpaceGrotesk', '../fonts/SpaceGrotesk/SpaceGrotesk-Bold', 700);
+//@include font-face('Inter', '../fonts/Inter/Inter-Light', 300);
+@include font-face('Inter', '../fonts/Inter/Inter-Regular', 400);
+@include font-face('Inter', '../fonts/Inter/Inter-Medium', 500);
+@include font-face('Inter', '../fonts/Inter/Inter-SemiBold', 600);
+//@include font-face('Inter', '../fonts/Inter/Inter-Bold', 700);

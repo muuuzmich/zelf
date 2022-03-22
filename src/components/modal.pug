@@ -1,0 +1,42 @@
+.modal-wrapper#modal-wrapper
+    .modalWindow
+        .gif-mobile
+            video(src="../assets/img/Card_rotate_final.mp4" autoplay muted loop playsinline)
+        .modalWindow__title
+            span=loc.zelf.title[0]
+            span.no-wrap
+                span.zelfInline
+                    video(src="../assets/img/Card_rotate_final.mp4" autoplay muted loop playsinline)
+                |&emsp;<span>#{loc.zelf.title[1].split(' ')[0]}</span>&emsp;
+            span #{loc.zelf.title[1].split(' ').slice(1).join(' ')}
+        .modalWindow__content
+            .qr
+                p #{loc.zelf.scan}
+                .qr-code
+                    img(src='../assets/img/'+loc.loc+'-qr.jpg')
+            .messenger
+                p.hide-mobile #{loc.zelf.messenger}
+                p.show-mobile #{loc.zelf.mobile}
+                ul.messenger-list
+                    li
+                        a(id=loc.loc+"_modal_messenger" href="https://m.me/zelf.co")
+                            img(
+                                src="../assets/img/social/messenger-no-bg.svg"
+                            )
+                    li
+                        a(id=loc.loc+"_modal_whatsapp" href="https://wa.me/33754030808?text=start")
+                            img(
+                                src="../assets/img/social/WhatsApp logo.svg"
+                            )
+                    li
+                        a(id=loc.loc+"_modal_telegram" href="tg://resolve?domain=zelfbot")
+                            img(
+                                src="../assets/img/social/telegram.svg"
+                            )
+                    li
+                        a(id=loc.loc+"_modal_viber" href="viber://pa?chatURI=zelf")
+                            img(
+                                src="../assets/img/social/Viber-no-bg.svg"
+                            )
+    .modal__footer
+        .modal__footer__small #{loc.zelf.footer}

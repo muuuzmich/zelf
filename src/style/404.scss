@@ -1,0 +1,101 @@
+@import "variables/index";
+@import "fonts/index";
+@import "base";
+@import "typo";
+@import "components/header";
+@import "components/social";
+@import "fonts/connect";
+@import "components/modal";
+
+html, body {
+  height: 100%;
+}
+
+html {
+  font-size: 9px;
+}
+
+.pageAlign {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  height: calc(100% - 75px);
+  margin: auto auto 0 auto;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+
+  .btn {
+    font-size: 18px;
+    margin-top: 25px;
+    margin-bottom: auto;
+  }
+
+  p {
+    margin: 10px 0 0 0;
+    font-weight: 600;
+    font-size: 6rem;
+    line-height: 8.7rem;
+    color: #999999;
+  }
+}
+
+.sphere-container {
+  position: relative;
+  height: 60%;
+  margin-top: 6rem;
+  width: 100%;
+
+  .err {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 100%;
+    color: #000000;
+  }
+
+  video {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+  }
+
+  #video-placeholder {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sphere-container {
+    margin-top: 0;
+  }
+  .content {
+    height: calc(100% - 50px);
+
+    p {
+      font-size: 7vw;
+    }
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 7px
+  }
+}

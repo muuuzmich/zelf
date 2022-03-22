@@ -1,0 +1,164 @@
+.card {
+  background: none;
+  height: 100vh;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  will-change: opacity, transform;
+  font-size: 7.2rem;
+  transform-origin: top;
+
+  &__content {
+    border-radius: 3rem;
+    padding: 3rem 1.6em 0;
+    margin-top: 5%;
+    height: 100%;
+    max-height: 67rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #000;
+    font-family: 'SpaceGrotesk', sans-serif;
+    text-align: left;
+  }
+
+  &__sub {
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    white-space: pre-line;
+
+    p {
+      margin: 0 0 0 1.5rem;
+      font-weight: 500;
+    }
+
+    &__icon {
+      font-size: 5rem;
+    }
+
+    ul.card-list {
+
+      margin-top: 2rem;
+
+      li {
+        font-weight: 500;
+        position: relative;
+        margin-bottom: 2rem;
+        padding-left: 2ch;
+
+        &::before {
+          font-size: 2rem;
+          margin-left: -3ch;
+          position: absolute;
+          font-family: 'Inter', sans-serif;
+          font-weight: 500;
+        }
+
+        &:nth-of-type(1)::before {
+          content: '①';
+        }
+
+        &:nth-of-type(2)::before {
+          content: '②';
+        }
+
+        &:nth-of-type(3)::before {
+          content: '③';
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    margin-bottom: 4rem;
+  }
+
+  &.card-1 {
+    .card__content {
+      background: $primary-green;
+    }
+
+    .secondary {
+      color: $primary-green-text;
+    }
+  }
+
+  &.card-2 {
+    top: 2.5vh;
+    height: 97.5vh;
+
+    .card__content {
+      background: $card-purple;
+    }
+
+    .secondary {
+      color: $card-purple-text;
+    }
+  }
+
+  &.card-3 {
+    top: 4vh;
+    height: 95vh;
+
+    .card__content {
+      background: $card-yellow;
+    }
+
+    .secondary {
+      color: $card-yellow-text;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      color: #FFFD54;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 2.1rem;
+      line-height: 120%;
+    }
+  }
+
+  &.card-4 {
+    .card__content {
+      //height: 65%;
+      //min-height: 570px;
+      //margin-top: -6%;
+      border-radius: 20px;
+      justify-content: flex-start;
+      padding-top: 7rem;
+      background: $card-black;
+      color: #fff;
+
+      .card__title {
+        margin-bottom: 0;
+      }
+
+      .card__sub {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+
+    .secondary {
+      color: $card-black-text;
+    }
+  }
+}

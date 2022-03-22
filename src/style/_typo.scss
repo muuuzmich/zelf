@@ -1,0 +1,135 @@
+a {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+
+  &.disabled {
+    opacity: .5;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:hover {
+
+  }
+}
+
+.emoji,
+span.emoji {
+  font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol, sans-serif;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.underline {
+  border-bottom: 2px solid currentColor;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.btn {
+  line-height: 1;
+  display: inline-block;
+  padding: .7em 2em;
+  flex-shrink: 0;
+  background: $primary-green;
+  border: 2px solid $primary-green;
+  border-radius: 90px;
+  color: #000;
+  font-size: 3rem;
+  font-weight: 500;
+  transition: all ease-out 100ms;
+
+  &:hover {
+    background: transparent !important;
+    color: $primary-green !important;
+  }
+
+  &--inverted {
+    background: transparent;
+    border-color: $primary-green;
+    color: $primary-green;
+
+    &:hover {
+      background: $primary-green !important;
+      color: #000 !important;
+    }
+  }
+
+  &--black {
+    background: #000;
+    color: #fff;
+  }
+
+  &--card {
+    background: black;
+    border-color: black;
+
+    &:hover {
+      color: #000 !important;
+    }
+  }
+}
+
+.btn-mobile-menu {
+  background: none;
+  border: none;
+  height: 25px;
+  padding: 0;
+  position: relative;
+  width: 30px;
+
+  &::after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    top: 5px;
+    transition: all ease 300ms;
+    width: 100%;
+  }
+
+  &::before {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 2px;
+    top: calc(100% - 8px);
+    position: absolute;
+    transition: all ease 300ms;
+    width: 100%;
+  }
+
+  &.close {
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+button, a {
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+p {
+  &.secondary, .secondary {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn {
+    padding: 0.88em 2em;
+    font-size: 17px;
+  }
+}

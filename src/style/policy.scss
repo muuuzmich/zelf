@@ -1,0 +1,54 @@
+html, body, .pageAlign{
+  height: 100%;
+}
+.pageAlign{
+  max-width: 1220px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: url("../img/Popup_BG_Overlay.jpg");
+}
+
+main{
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  height: 100%;
+  max-height: 895px;
+  display: flex;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #111113;
+}
+
+iframe{
+  max-width: 850px;
+  margin: auto;
+  border: none;
+}
+
+
+.single-page-nav{
+  margin-right: auto !important;
+  margin-left: 20px !important;
+}
+
+footer{
+  flex-shrink: 0;
+  margin-top: auto;
+  bottom: 3vh;
+  position: relative;
+  text-align: center;
+  font-size: 17px;
+  line-height: 135%;
+  opacity: 0.6;
+  p{
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 11px;
+  }
+}

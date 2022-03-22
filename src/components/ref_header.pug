@@ -1,0 +1,33 @@
+nav.site-header.ref-header(data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1000")
+    .site-header__content
+        a(href="/").logo-link
+            img(
+                src='./assets/img/logo_white.svg'
+            ).logo
+        ul.site-nav
+            li
+                a(href="https://medium.com/zelfco") Blog
+            li
+                a(href="/faq.html") FAQ
+        .info
+            div.custom-select
+                select
+                    option(value="" selected) 🇺🇸󠁧󠁢󠁥󠁮󠁧󠁿 English
+                    option(value="" disabled) 🇺🇸󠁧󠁢󠁥󠁮󠁧󠁿 English
+                    option(value="/es") 🇪🇸󠁧󠁢󠁥󠁮󠁧󠁿 Español
+                    option(value="/fr") 🇫🇷󠁧󠁢󠁥󠁮󠁧󠁿 Français
+            //.total-joined
+            //    | <span class="counter">1485</span> people joined
+            button.btn.btn--referal.btn--inverted#header_btn Back to Website
+nav.site-header.site-header--mobile.full
+    .site-header__content
+        img(
+            src='./assets/img/logo_white.svg'
+        ).logo
+        .mobile-select.ref-select
+            select
+                option() 🇺🇸󠁧󠁢󠁥󠁮󠁧󠁿 English
+                option() 🇪🇸󠁧󠁢󠁥󠁮󠁧󠁿 Español
+                option() 🇫🇷󠁧󠁢󠁥󠁮󠁧󠁿 Français
+        //.total-joined
+            | <span class="counter">1485</span> people joined

@@ -1,0 +1,49 @@
+doctype html
+html(lang="en")
+    meta(charset="utf-8")
+    title Zelf – Instant Money in Messengers.
+    meta(name="description" content="No apps. No banks. No fees.⚡️Send and receive money easily by text or voice. ⏱️First cards will be distributed soon 📱Start in any messenge 👨‍👩‍👧‍👦 Invite friends and get💰unlimited cash bonuses")
+    meta(property="property:description" content="No apps. No banks. No fees.⚡️Send and receive money easily by text or voice. ⏱️First cards will be distributed soon 📱Start in any messenge 👨‍👩‍👧‍👦 Invite friends and get💰unlimited cash bonuses")
+    meta(property="og:type" content="article")
+    meta(property="og:title" content="Zelf – Instant Money in Messengers")
+    meta(property="og:site_name" content="Zelf")
+    meta(property="og:url" content="zelf.co")
+    meta(property="og:image" content="../og-image.png")
+    meta(name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+    link(href='../assets/css/faq.min.css' rel="stylesheet")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.css")
+    <!-- Google Tag Manager -->
+    script
+        | (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        | new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        | j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        | 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        | })(window,document,'script','dataLayer','GTM-PQCHTW5');</script>
+    <!-- End Google Tag Manager -->
+    body
+        <!-- Google Tag Manager (noscript) -->
+
+        noscript
+            iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-PQCHTW5"
+                height="0" width="0" style="display:none;visibility:hidden")
+        <!-- End Google Tag Manager (noscript) -->
+        -loc = rq('./src/en/loc.js');
+        include ../components/faq_header
+        .list-container
+        .pageAlign.faqPage
+            ul.faq__list
+                -let qustions = rq('./src/en/faq.js');
+                each q, category  in qustions
+                    ul.faq__list__category
+                        h1(id=category) #{qustions[category].title}
+                        each question in q.questions
+                            li.faq__list__category__item
+                                .faq__list__category__item__title=question.text
+                                .faq__list__category__item__content
+                                    p !{question.answer}
+        include ../components/modal
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.1.1/tocbot.min.js")
+        script(src="../assets/js/modal.js" type="text/javascript")
+        script(src="../assets/js/loc.js" type="text/javascript")
+        script(src="../assets/js/faq.js" type="text/javascript")

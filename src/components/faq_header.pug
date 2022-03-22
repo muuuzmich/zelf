@@ -1,0 +1,52 @@
+nav.site-header#site-header.full
+    .site-header__content.site-header__content--fixed
+        a(href="./").logo-link
+            img(src='../assets/img/logo_white.svg').logo
+        ul.site-nav.single-page-nav
+            li
+                a(href="https://medium.com/zelfco") Blog
+            li
+                a(href= "./faq.html" ) FAQ
+            li
+                a(href="./#referral_section") Referral Program
+        .info
+            div.custom-select
+                select
+                    -let a = {'es' : {'title' : '🇪🇸󠁧󠁢󠁥󠁮󠁧󠁿 Español', 'val' : '/es'},'en' : {'title' : '🇺🇸󠁧󠁢󠁥󠁮󠁧󠁿 English', 'val' : '/en'},'fr' : {'title' : '🇫🇷󠁧󠁢󠁥󠁮󠁧󠁿 Français', 'val' : '/fr'}}
+                    -let ln = loc.loc;
+                    option(value=a[ln].val)=a[ln].title
+                    -delete a[ln]
+                    each data, ln in a
+                        option(value=data.val)=data.title
+            if keep === 'false'
+                a(id=loc.loc + "_header_btn" href="./" data-keep_header='true').header--btn.btn.modal_btn #{loc.modal.back}
+            else
+                a(id=loc.loc + "_header_btn" href="./" data-keep_header='true' data-close=loc.modal.back).header--btn.btn.modal_btn #{loc.modal.open}
+
+nav.site-header.site-header--mobile.full#site-header-mobile
+    .site-header__content
+        a(href="./").logo-link
+            img(
+                src='../assets/img/logo_white.svg'
+            ).logo
+        .mobile-menu#mobile-menu
+            ul.mobile-menu__content
+                li
+                    a(href="https://medium.com/zelfco") Blog
+                li
+                    a(href="./faq.html") FAQ
+                li
+                    a(href="./#referral_section") Referral Program
+                li
+                    a.btn.modal_btn(id=loc.loc + "_mobile_header_button")=loc.modal.open
+                    div.mobile-select
+                        select
+                            -let b = {'es' : {'title' : '🇪🇸󠁧󠁢󠁥󠁮󠁧󠁿 Español', 'val' : '/es'},'en' : {'title' : '🇺🇸󠁧󠁢󠁥󠁮󠁧󠁿 English', 'val' : '/en'},'fr' : {'title' : '🇫🇷󠁧󠁢󠁥󠁮󠁧󠁿 Français', 'val' : '/fr'}}
+                            option(value=b[ln].val)=b[ln].title
+                            -delete b[ln]
+                            each data, ln in b
+                                option(value=data.val)=data.title
+            div.mobile-menu__overlay
+                p #{loc.menu.text} <span class="secondary"> #{loc.menu.secondary}</span>
+                include communities_links
+        button.btn-mobile-menu#open-menu

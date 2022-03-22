@@ -1,0 +1,167 @@
+-let src = loc.loc === 'en' ? '' : loc.loc + '/'
+.pageAlign
+    #skrollr-body
+    section.header-section
+        .sticky
+            .section__container
+                .section__title(data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" data-aos-offset="0")
+                    | #{loc.first.title} <span class="secondary">#{loc.first.secondary}</span>
+                .section__content
+                    a.btn.modal_btn(id=(loc.loc + "_first_page_button")
+                        data-aos="fade-up"
+                        data-aos-once="true"
+                        data-aos-duration="1000" data-aos-delay="2000" data-aos-offset="0") #{loc.CTA}
+                    p(data-aos="fade-up"
+                        data-aos-once="true"
+                        data-aos-duration="1000" data-aos-delay="2500" data-aos-offset="0")
+                        =loc.first.invite
+            .section__animation
+                .show-mobile.zelfAnimation
+                    img(src="../assets/img/logo.svg").logo
+                    img(src="../assets/img/messenger_logo.svg").messanger_logo
+                    div.sphere-container(
+                        data-8p-bottom-top="opacity:1; width: 130%;transform:translateY(-100vh) translateX(-10%)"
+                        data-150p-top-top="opacity:1; width:30%;transform:translateY(0vh) translateX(0%)"
+                    )
+                        img(src="../assets/img/circle.svg")#video-placeholder
+                        video(src="../assets/img/Sphere_full.mp4"
+                            autoplay loop muted playsinline).sphere#mobile-sphere
+                            | Sorry, your browser doesn't support embedded videos
+    section.sticky-section.no-installation
+        .sticky
+            .section__container
+                .section__title
+                    span.no-wrap=loc.noInstall.title
+                    br
+                    span.secondary #{loc.noInstall.secondary}
+                .section__content
+                    ul.social-links.bots
+                        include ../components/bots_link
+                    p.secondary #{loc.noInstall.additional}
+            .section__animation
+                .zelfAnimation.hide-mobile
+                    img(src="../assets/img/logo.svg").logo
+                    img(src="../assets/img/messenger_logo.svg").messanger_logo
+                    div.sphere-container(
+                        data-8p-bottom-top="opacity:1; width: 130%;transform:translateY(-100vh) translateX(-10%);@full: 0;"
+                        data-50p-top-top="opacity:1; width:34%;transform:translateY(0vh) translateX(0%);@full: 1;"
+                    )
+                        video(src="../assets/img/Sphere_full.mp4" poster="../assets/img/circle.svg"
+                            autoplay loop muted playsinline).sphere#sphere
+                            | Sorry, your browser doesn't support embedded videos
+                .chat-title.hide-mobile(data-aos-once="true" data-aos="fade-in" data-aos-offset="300") Zelf
+                    img(src="../assets/img/verified.svg").verified
+                .messages
+                    video(
+                        data-src=`../assets/img/videos/${src}dialog.mp4`
+                        data-mob-src=""
+                        muted playsinline).tmp
+    section.section-card.sticky-section
+        .sticky
+            .section__container
+                .section__title
+                    span #{loc.zelfCard.title} <span class="secondary">#{loc.zelfCard.secondary}</span>
+                .section__content
+                    img(src="../assets/img/contactless.svg" height=48).apple-pay
+                    p.secondary=loc.zelfCard.payPass
+            .section__animation
+                .tmp.show-mobile(style="background-image:url(\"../assets/img/pngs/ZELFCARD.png\")")
+                .phone.hide-mobile
+                    img(src="../assets/img/card.png"
+                        data-150p="transform:translateY(-25vh) translateX(0%) scale(1.2)"
+                        data-top-top="transform:translateY(0) translateX(9.5%) scale(1)"
+                    ).cardImage
+                    img(src="../assets/img/phone.png"
+                        srcset="../assets/img/phone@2x.png 2x"
+                        data-20p-top-top="opacity: 0"
+                        data-top-top="opacity: 1"
+                    )
+    section.section-voice.sticky-section
+        .sticky
+            .section__container
+                .section__title(data-aos-once="true" data-disabled-aos="fade-up" data-aos-duration="1000" data-aos-delay="500")
+                    span.no-wrap #{loc.justSay.title} 
+                    span.secondary #{loc.justSay.secondary}
+                .section__content
+                    ul.advantages
+                        li(data-disabled-aos="fade-up" data-aos-duration="500" data-aos-delay="400")
+                            .icon.emoji 💸
+                            | #{loc.justSay.advantages[0]}
+                        li(data-disabled-aos="fade-up" data-aos-duration="500" data-aos-delay="600")
+                            .icon.emoji 🙈
+                            | #{loc.justSay.advantages[1]}
+                        li(data-disabled-aos="fade-up" data-aos-duration="500" data-aos-delay="500")
+                            .icon.emoji 👀
+                            | #{loc.justSay.advantages[2]}
+                        li(data-disabled-aos="fade-up" data-aos-duration="500" data-aos-delay="700")
+                            .icon.emoji 🎚
+                            | #{loc.justSay.advantages[3]}
+            .section__animation.voiceCommunication
+                div.video-container
+                    video.tmp(loop muted playsinline
+                    data-src=`../assets/img/videos/${src}just-say.mp4` data-mob-src=`../assets/img/videos/${src}just-say-mob.mp4`
+                    )
+    section.sticky-section
+        .sticky
+            .section__container
+                .section__title
+                    span.no-wrap #{loc.getPaid.title}&nbsp;💶&nbsp;
+                    span.secondary #{loc.getPaid.secondary}
+                .section__content
+                    ul.advantages.advantages--invoice
+                        li
+                            .icon 📝
+                            | #{loc.getPaid.advantages[0]}
+                        li
+                            .icon 👹
+                            | #{loc.getPaid.advantages[1]}
+                        li
+                            .icon 👌
+                            | #{loc.getPaid.advantages[2]}
+                        li
+                            .icon 🤳
+                            | #{loc.getPaid.advantages[3]}
+            .section__animation.invoice
+                div.video-container
+                    video(
+                        data-src=`../assets/img/videos/${src}get-paid.mp4`
+                        data-src-mob=""
+                        loop muted playsinline).tmp
+    section.cards#referral_section
+        .card.card-1(data-top-top="opacity:1; transform: scale(1)" data-10p-top-bottom="opacity:1; transform: scale(.9)")
+            .card__content
+                .card__title
+                    span #{loc.cards.first.text} <span class="no-wrap">🦁🐸🐵</span>
+                    span.secondary=loc.cards.first.secondary
+                .card__sub
+                    .card__sub__icon.hide-mobile 😎
+                    p=loc.cards.first.additional
+        .card.card-2(data-top-top="opacity:1; transform: scale(1)" data-10p-top-bottom="opacity:1; transform: scale(.95)")
+            .card__content
+                .card__title
+                    | #{loc.cards.second.text}&nbsp;✌️&nbsp;<span class="secondary">#{loc.cards.second.secondary}</span>
+                .card__sub
+                    ul.card-list
+                        li #{loc.cards.second.steps[0]}
+                        li #{loc.cards.second.steps[1]} <span class="underline">#{loc.cards.second.steps[2]}</span> #{loc.cards.second.steps[3]}
+                        li #{loc.cards.second.steps[4]}
+        .card.card-3(data-top-top="opacity:1; transform: scale(1)" data-top-bottom="opacity:1; transform: scale(1)")
+            .card__content
+                .card__title
+                    | #{loc.cards.third.text}&nbsp;💸<br><span class="secondary">#{loc.cards.third.secondary}</span>
+                .card__sub
+                    a.btn.btn--card.modal_btn(id=loc.loc + "_card_3_button") #{loc.cards.third.cta}
+    section.last-card-section.sticky-section
+        .card.card-4.sticky
+            .card__content
+                .card__title
+                    | #{loc.footer.text} <span class="no-wrap">💚💜💛</span> <span class="secondary">#{loc.footer.secondary}</span>
+                .card__sub
+                    include ../components/communities_links
+    section.footer-section.sticky-section
+        footer.sticky
+            p !{loc.terms}
+            //p ZELF is registered by the Prudential Supervision and Resolution Authority (ACPR) as an agent of TREEZOR SAS, with a capital of € 1,800,000 - registered office 41 rue de Prony, 75017 Paris - RCS Nanterre n ° 807 465 059, electronic money establishment approved by the ACPR under number 16798. When you use ZELF Services you agree to General conditions of the Use of the Card, our Privacy Policy and Refer a Friend Terms and Conditions.
+                //| <script>document.write(new Date().getFullYear());</script> © Zelf Neobanking
+                //br
+                //a(href="/privacy.html") Privacy Policy
